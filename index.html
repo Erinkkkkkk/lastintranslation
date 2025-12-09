@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Translate Me</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Global font + centering */
+      body, textarea, div {
+        font-family: Georgia, serif;
+        text-align: center;
+      }
+
+      body {
+        margin: 0;
+        background: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* TOP: big asemic paragraph area */
+      #top {
+        flex: 4; /* bigger portion */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 40px 20px 40px;
+        background: white;
+      }
+
+      #canvas-container {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        max-width: 1100px; /* wider paragraph block */
+        max-height: 720px;
+      }
+
+      /* BOTTOM: smaller translation area */
+      #bottom {
+        flex: 1; /* smaller portion */
+        background: white;
+        padding: 10px 40px 30px 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      #translation-box {
+        width: 40%;          /* narrower column */
+        max-width: 520px;
+        min-height: 120px;   /* shorter box */
+        max-height: 200px;
+        resize: none;
+
+        background: white;
+        border: none;
+        border-bottom: 1px solid #ccc;
+
+        padding: 10px 8px;
+        font-size: 18px;
+        line-height: 1.6;
+        outline: none;
+        text-align: center;
+      }
+
+      #translation-box::placeholder {
+        color: rgba(0, 0, 0, 0.35);
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- TOP: ASEMIC PARAGRAPH -->
+    <div id="top">
+      <div id="canvas-container"></div>
+    </div>
+
+    <!-- BOTTOM: TRANSLATION AREA -->
+    <div id="bottom">
+      <textarea
+        id="translation-box"
+        placeholder="Translate the text here. I am trying..."
+      ></textarea>
+    </div>
+
+    <!-- p5 library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <!-- your p5 sketch -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
